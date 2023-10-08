@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,6 +6,30 @@
 <head>
 <title>Detail</title>
 <%@include file="/common/head.jsp"%>
+<style>
+.swiper-slide {
+	height: 100%;
+}
+
+.swiper-slide>div {
+	padding-bottom: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-color: #ccc;
+}
+
+.swiper-slide-thumb-active::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.25);
+}
+</style>
 </head>
 <body>
 	<%@include file="/common/header.jsp"%>
@@ -31,50 +56,37 @@
 		<div class="container">
 			<div class="row gx-5">
 				<aside class="col-lg-6">
-					<div class="border rounded-4 mb-3 d-flex justify-content-center">
-						<a data-fslightbox="mygalley" class="rounded-4" target="_blank"
-							data-type="image"
-							href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp">
-							<img style="max-width: 100%; max-height: 100vh; margin: auto;"
-							class="rounded-4 fit"
-							src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp" />
-						</a>
+					<div class="swiper mySwiper2">
+						<div class="swiper-wrapper" style="height: 100%">
+							<c:forEach begin="0" end="9">
+								<div class="swiper-slide">
+									<div
+										style="background-image: url('https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp')"></div>
+								</div>
+								<div class="swiper-slide">
+									<div
+										style="background-image: url('https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp')"></div>
+								</div>
+							</c:forEach>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
 					</div>
-					<div class="d-flex justify-content-center mb-3">
-						<a data-fslightbox="mygalley" class="border mx-1 rounded-2"
-							target="_blank" data-type="image"
-							href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big1.webp"
-							class="item-thumb"> <img width="60" height="60"
-							class="rounded-2"
-							src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big1.webp" />
-						</a> <a data-fslightbox="mygalley" class="border mx-1 rounded-2"
-							target="_blank" data-type="image"
-							href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big2.webp"
-							class="item-thumb"> <img width="60" height="60"
-							class="rounded-2"
-							src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big2.webp" />
-						</a> <a data-fslightbox="mygalley" class="border mx-1 rounded-2"
-							target="_blank" data-type="image"
-							href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big3.webp"
-							class="item-thumb"> <img width="60" height="60"
-							class="rounded-2"
-							src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big3.webp" />
-						</a> <a data-fslightbox="mygalley" class="border mx-1 rounded-2"
-							target="_blank" data-type="image"
-							href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big4.webp"
-							class="item-thumb"> <img width="60" height="60"
-							class="rounded-2"
-							src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big4.webp" />
-						</a> <a data-fslightbox="mygalley" class="border mx-1 rounded-2"
-							target="_blank" data-type="image"
-							href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp"
-							class="item-thumb"> <img width="60" height="60"
-							class="rounded-2"
-							src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp" />
-						</a>
+					<div class="swiper mySwiper mt-2">
+						<div class="swiper-wrapper">
+							<c:forEach begin="0" end="9">
+								<div class="swiper-slide">
+									<div
+										style="background-image: url('https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp')"></div>
+								</div>
+								<div class="swiper-slide">
+									<div
+										style="background-image: url('https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp')"></div>
+								</div>
+							</c:forEach>
+						</div>
 					</div>
-					<!-- thumbs-wrap.// -->
-					<!-- gallery-wrap .end// -->
+
 				</aside>
 				<main class="col-lg-6">
 					<div class="ps-lg-3">
@@ -360,5 +372,26 @@
 	<%@include file="/common/footer.jsp"%>
 
 	<%@include file="/common/script.jsp"%>
+
+	<script>
+		var swiper = new Swiper(".mySwiper", {
+			loop : true,
+			spaceBetween : 10,
+			slidesPerView : 4,
+			freeMode : true,
+			watchSlidesProgress : true,
+		});
+		var swiper2 = new Swiper(".mySwiper2", {
+			loop : true,
+			spaceBetween : 10,
+			navigation : {
+				nextEl : ".swiper-button-next",
+				prevEl : ".swiper-button-prev",
+			},
+			thumbs : {
+				swiper : swiper,
+			},
+		});
+	</script>
 </body>
 </html>
