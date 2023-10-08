@@ -3,7 +3,8 @@
 	xmlns="https://jakarta.ee/xml/ns/jakartaee"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
 	id="WebApp_ID" version="6.0">
-	<display-name></display-name>
+	
+	<display-name>Sparkling Stones</display-name>
 	<welcome-file-list>
 		<welcome-file>home</welcome-file>
 	</welcome-file-list>
@@ -16,5 +17,25 @@
 	<servlet-mapping>
 		<servlet-name>HomeController</servlet-name>
 		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>shop</display-name>
+		<servlet-name>shop</servlet-name>
+		<servlet-class>controller.common.ListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>shop</servlet-name>
+		<url-pattern>/shop</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>CartController</display-name>
+		<servlet-name>CartController</servlet-name>
+		<servlet-class>controller.common.CartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartController</servlet-name>
+		<url-pattern>/cart</url-pattern>
 	</servlet-mapping>
 </web-app>
