@@ -12,7 +12,8 @@ import java.io.IOException;
  */
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static final String FOWARD_PAGE = "/main/login.jsp";
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,7 +27,7 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/main/login.jsp").forward(request, response);
+		request.getRequestDispatcher(FOWARD_PAGE).forward(request, response);
 	}
 
 	/**

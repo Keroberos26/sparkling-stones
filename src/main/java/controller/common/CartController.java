@@ -4,6 +4,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import util.EmailService;
+
 import java.io.IOException;
 
 /**
@@ -11,7 +13,8 @@ import java.io.IOException;
  */
 public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static final String FOWARD_PAGE = "/main/cart.jsp";
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -25,7 +28,7 @@ public class CartController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("main/cart.jsp").forward(request, response);
+		request.getRequestDispatcher(FOWARD_PAGE).forward(request, response);
 	}
 
 	/**

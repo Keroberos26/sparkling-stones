@@ -11,6 +11,7 @@ import java.io.IOException;
  */
 public class ListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String FOWARD_PAGE = "/main/list.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -25,7 +26,7 @@ public class ListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("main/list.jsp").forward(request, response);
+		request.getRequestDispatcher(FOWARD_PAGE).forward(request, response);
 	}
 
 	/**

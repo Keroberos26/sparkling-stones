@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -74,7 +75,7 @@
 									Sign up</button>
 
 								<p class="small fw-bold mt-2 pt-1 mb-4">
-									You already have an account? <a href="/login" class="link-danger">Sign In</a>
+									You already have an account? <a href="login" class="link-danger">Sign In</a>
 								</p>
 
 								<!-- Register buttons -->
