@@ -12,7 +12,7 @@
 					<!-- Content -->
 					<a href="https://mdbootstrap.com/" target="_blank"
 						class="text-white h2"> MDB </a>
-					<p class="mt-1 text-white">© 2023 Copyright: MDBootstrap.com</p>
+					<p class="mt-1 text-white">© 2023 Copyright: Hello.com</p>
 				</div>
 				<!-- Grid column -->
 
