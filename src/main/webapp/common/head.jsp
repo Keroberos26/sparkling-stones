@@ -19,3 +19,4 @@
 <!-- Custom styles -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/main.css" />
+<base href="<%=request.getContextPath() %>/" />
